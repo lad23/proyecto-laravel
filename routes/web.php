@@ -20,5 +20,22 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-
+//rutas
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/sobrenosotros', [HomeController::class, 'sobrenosotros']);
+Route::get('/contacto', [HomeController::class, 'contacto']);
+Route::get('/faq', [HomeController::class, 'faq']);
+
+
+/*
+TAREA PARA DESARROLLAR:
+
+CREAR ruta, controlador
+
+
+UNA RUTA /categories  QUE CONECTE CON UN CONTROLADOR LLAMADO eventcategoryController
+QUE RETORNE UNA VISTA LALMADA events-categories.blade.php EN EL CUAL SE LISTEN TODAS
+LAS CATEGORIAS QUE TENEMOS EN LA BASE DE DATOS
+
+
+*/

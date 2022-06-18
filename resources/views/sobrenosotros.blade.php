@@ -4,16 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Eventos turisticos</title>
+    <title>Sobre nosotros</title>
 </head>
 <body>
 
-    <h1>Eventos turisticos</h1>
-
-    <ol>
-    @foreach ( $categories as $Category )
-        <li>{{ $Category->name }}</li>
-    @endforeach
-    </ol>
+    <h1>Sobre nosotros</h1>
+    
 </body>
 </html>
