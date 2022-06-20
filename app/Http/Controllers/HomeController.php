@@ -4,30 +4,40 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Event;
 
-//controlador
+
 class HomeController extends Controller
 {
-    public function index(){
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
+    public function home()
+    {
+        return view('home');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
         $categories = Category::all();
+        $events = Event::all();
 
-        //dd($categories);
-
-        return view('events', ['categories' => $categories]);
-    }
-
-
-    public function sobrenosotros(){
-
-        return view('sobrenosotros');
-    }
-
-
-    public function contacto(){
-
-        return view('contacto');
-
+        return view('events',[
+            'categories' => $categories,
+            'events' => $events
+        ]);
+        
     }
 }
-

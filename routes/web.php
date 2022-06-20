@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,10 +22,11 @@ use Illuminate\Support\Facades\Route;
 
 
 //rutas
-Route::get('/', [HomeController::class, 'index']);
+//Route::get('/', [HomeController::class, 'index']);
 Route::get('/sobrenosotros', [HomeController::class, 'sobrenosotros']);
 Route::get('/contacto', [HomeController::class, 'contacto']);
 Route::get('/faq', [HomeController::class, 'faq']);
+Route::get('/categories', [HomeController::class, 'categories']);
 
 
 /*
@@ -39,3 +41,10 @@ LAS CATEGORIAS QUE TENEMOS EN LA BASE DE DATOS
 
 
 */
+Auth::routes();
+
+Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/home', [HomeController::class, 'home'])->name('home');
+
+
+Route::get('admin/events', [EventController::class, 'index']);
