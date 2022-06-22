@@ -44,7 +44,7 @@
 
             @foreach ($events as $event)
                   <div class="col-md-4 col-sm-12 text-center event mb-4">
-                <img src={{$event->featured}} class="img-fluid" alt="{{$event->title}}" style="width:100%; height:100%; object-fit: cover;">
+                <img src="{{asset('images/uploads/events/'.$event->featured)}}" class="img-fluid" alt="{{$event->title}}" style="width:100%; height:100%; object-fit: cover;">
                 <div class="text-block">
                     <h4 class="text-block-title">{{$event->title}}</h4>
                     <p class="text-block-p mb-0 fw-400">{{$event->date_event}}</p>

@@ -47,4 +47,9 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/home', [HomeController::class, 'home'])->name('home');
 
 
-Route::get('admin/events', [EventController::class, 'index']);
+Route::get('admin/events', [EventController::class, 'index'])->name('events.index');
+Route::get('admin/events/create', [EventController::class, 'create'])->name('events.create');
+Route::post('admin/events/store', [EventController::class, 'store'])->name('events.store');
+Route::get('admin/events/{event}/edit', [EventController::class, 'edit'])->name('events.edit');
+Route::post('admin/events/{event}/update', [EventController::class, 'update'])->name('events.update');
+Route::post('admin/events/{event}/delete', [EventController::class, 'delete'])->name('events.delete');

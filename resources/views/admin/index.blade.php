@@ -12,7 +12,7 @@
         <div class="card">
             <div class="card-header">
                 <div class="card-title">
-                    Listado de Eventos <a href="" class="btn btn-sm btn-primary">Crear</a>
+                    Listado de Eventos <a href="{{route('events.create')}}" class="btn btn-sm btn-primary">Crear</a>
                 </div>
             </div>
             <div class="card-body">
@@ -33,14 +33,19 @@
                         <tr>
                             <td>{{$event->title}}</td>
                             <td>
-                                <img src="{{$event->featured}}" alt="" width="120">
+                                <img src="{{asset('images/uploads/events/'.$event->featured)}}" alt="" width="120">
+                               {{--  <img src="/images/uploads/events/{{$event->featured}}" alt="" width="120"> --}}
                             </td>
                             <td>{{$event->date_event}}</td>
                             <td>{{$event->name_event}}</td>
                             <td>{{$event->status}}</td> 
                             <td>
-                                <a href="" class="btn btn-sm btn-warning">Editar</a>
-                                <a href="" class="btn btn-sm btn-danger">Eliminar</a>
+                                {{-- cuando hagamos click, redirige a la ruta event.edit --}}
+                                <a href="{{route('events.edit', $event)}}" class="btn btn-sm btn-warning">Editar</a>
+                                <form action="{{route('events.delete', $event   )}}" method="POST">
+                                    @csrf
+                                    <button  class="btn btn-sm btn-danger">Eliminar</button>
+                                </form>
                             </td>
                         </tr> 
                         @endforeach

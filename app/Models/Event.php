@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
-    use HasFactory;
+    use HasFactory; 
+
+    protected $fillable = ["category_id", "title", "date_event", "name_event", "description", "featured"];
 }
