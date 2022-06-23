@@ -53,3 +53,7 @@ Route::post('admin/events/store', [EventController::class, 'store'])->name('even
 Route::get('admin/events/{event}/edit', [EventController::class, 'edit'])->name('events.edit');
 Route::post('admin/events/{event}/update', [EventController::class, 'update'])->name('events.update');
 Route::post('admin/events/{event}/delete', [EventController::class, 'delete'])->name('events.delete');
+
+//FIltrado
+
+Route::post('event/filter', [HomeController::class, 'filter'])->name('filter');

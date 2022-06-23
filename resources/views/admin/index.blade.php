@@ -24,6 +24,7 @@
                             <th>Fecha</th>
                             <th>Lugar</th>
                             <th>Estado</th>
+                            <th>Categoria</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -39,6 +40,7 @@
                             <td>{{$event->date_event}}</td>
                             <td>{{$event->name_event}}</td>
                             <td>{{$event->status}}</td> 
+                            <td>{{$event->category->name}}</td> 
                             <td>
                                 {{-- cuando hagamos click, redirige a la ruta event.edit --}}
                                 <a href="{{route('events.edit', $event)}}" class="btn btn-sm btn-warning">Editar</a>
